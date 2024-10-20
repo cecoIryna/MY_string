@@ -102,9 +102,9 @@ int main() {
     MyString str13("Hello, world!");
 
     cout << "Enter a string for str12: ";
-    cin >> str12;  // Используем оператор ввода
+    cin >> str12;  
 
-    cout << "str1: " << str12 << endl;  // Используем оператор вывода
+    cout << "str1: " << str12 << endl; 
     cout << "str2: " << str13 << endl;
 
 
