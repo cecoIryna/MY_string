@@ -47,19 +47,6 @@ public:
     int getLength() const;
     void setLength(int newLength);
 
-    //HW_13
-    /*MyString(initializer_list<char> initList)
-    {
-        length = initList.size();
-        str = new char[length + 1];
-
-        auto it = initList.begin();
-        for (int i = 0; i < length; ++i, ++it) {
-            str[i] = *it;
-        }
-        str[length] = '\0';
-        objCount++;
-    }*/
 };
 
 MyString operator+(const MyString& a, char b);

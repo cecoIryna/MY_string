@@ -107,9 +107,6 @@ int main() {
     cout << "str1: " << str12 << endl;  // Используем оператор вывода
     cout << "str2: " << str13 << endl;
 
-    //Демонстрация initializer_list constructor
-    /*MyString obj{ 'H', 'e', 'l', 'l', 'o' };
-    obj.Output();*/
 
     return 0;
 }

@@ -308,7 +308,7 @@ int MyString::getLength() const
 void MyString::setLength(int newLength) {
     length = newLength;
 }
-//
+
 ostream& operator<<(ostream& os, const MyString& obj)
 {
     os << obj.GetStr();
@@ -322,6 +322,3 @@ istream& operator>>(istream& is, MyString& obj)
     obj.setStr(buffer);
     return is;
 }
-
-
-
