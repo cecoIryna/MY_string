@@ -14,7 +14,7 @@ int main() {
     // Демонстрация функции MyStrCat (объединение строк)
     cout << "Demonstration of MyStrCat: ";
     str1.MyStrCat(str2);
-    str1.Output();
+    cout << str1 << endl;
 
     // Демонстрация функции MyStrLen (длина строки)
     cout << "Demonstration of MyStrLen: " << str1.MyStrLen() << endl;
@@ -28,12 +28,12 @@ int main() {
     // Демонстрация оператора + (конкатенация)
     cout << "Demonstration of + operator: ";
     MyString str3 = str1 + str2;
-    str3.Output();
+    cout << str3 << endl;
 
     // Демонстрация функции MyDelChr (удаление символа)
     cout << "Demonstration of MyDelChr ('o'): ";
     str1.MyDelChr('o');
-    str1.Output();
+    cout << str1 << endl;
 
     // Демонстрация оператора == (сравнение строк)
     cout << "Demonstration of == operator: ";
@@ -47,13 +47,13 @@ int main() {
     cout << "Demonstration of MyStrcpy: ";
     MyString str4;
     str4.MyStrcpy(str4.GetStr(), str1.GetStr());
-    str4.Output();
+    cout << str4 << endl;
 
     // Проверка оператора = (присваивание)
     cout << "Demonstration of operator= : ";
     MyString str5;
     str5 = str1;
-    str5.Output();
+    cout << str5 << endl;
 
     // Количество объектов
     cout << "Object count: " << MyString::getObjectCount() << endl;
@@ -66,37 +66,37 @@ int main() {
     //// Демонстрация оператора ()
     str6();
     cout << "Updated string: ";
-    str6.Output();
+    cout << str6 << endl;
 
     //// Демонстрация добавления символа в конец
     MyString str7 = str6 + 'A';
     cout << "After adding 'A' to the end: ";
-    str7.Output();
+    cout << str7 << endl;
 
     // Демонстрация добавления символа в начало
     cout << "Adding 'A' to beginning: ";
     str7 = 'A' + str6;
-    str7.Output();
+    cout << str7 << endl;
 
     // Демонстрация добавления 10 символов  в конец строки
     MyString str8 = str6 + 10;
     cout << "After adding 10 ! to the end: ";
-    str8.Output();
+    cout << str8 << endl;
 
     // Демонстрация добавления 10 символов в начало строки
     MyString str9 = 10 + str6;
     cout << "After adding 10 ! to the start: ";
-    str8.Output();
+    cout << str9 << endl;
 
     // Постфиксный инкремент
     cout << "Add _ to the end: ";
     MyString str10 = str6++;
-    str10.Output();
+    cout << str10 << endl;
 
     // Постфиксный инкремент (добавление в начало)
     cout << "Add _ to the start: ";
     MyString str11 = ++str6;
-    str11.Output();
+    cout << str11 << endl;
 
     MyString str12;
     MyString str13("Hello, world!");

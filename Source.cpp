@@ -60,14 +60,14 @@ void MyString::setStr(const char* inputStr)
 }
 
 
-void MyString::Input() {
-    cout << "Enter string: ";
-    cin.getline(str, length);
-}
-
-void MyString::Output() const {
-    cout << str << endl;
-}
+//void MyString::Input() {
+//    cout << "Enter string: ";
+//    cin.getline(str, length);
+//}
+//
+//void MyString::Output() const {
+//    cout << str << endl;
+//}
 
 void MyString::MyStrcpy(char* dest, const char* src) {
     int i = 0;
@@ -114,7 +114,7 @@ int MyString::MyStrLen(const char* s) const {
     return len;
 }
 
-void MyString::MyStrCat(MyString& b) {
+void MyString::MyStrCat(const MyString& b) {
     char* newStr = new char[length + b.length + 1]; // Убираем лишний пробел
     for (int i = 0; i < length; ++i) {
         newStr[i] = str[i];
@@ -137,7 +137,7 @@ void MyString::MyDelChr(char c) {
     length = newLength;
 }
 
-int MyString::MyStrCmp(MyString& b) {
+int MyString::MyStrCmp(const MyString& b) {
     int i = 0;
     while (i < length && i < b.length) {
         if (str[i] < b.str[i]) return -1;
@@ -165,7 +165,7 @@ MyString MyString::operator+(const MyString& b) const {
 MyString MyString::operator=(const MyString& other) {
     if (this == &other) return *this;
     delete[] str;
-    length = other.MyStrLen();
+    length = other.getLength();
     str = new char[length + 1];
     MyStrcpy(str, other.GetStr());
     return *this;
@@ -189,7 +189,9 @@ const char& MyString::operator[](int index) const {
 }
 
 void MyString::operator()() {
-    Input();
+    cout << "Enter string: ";
+    cin >> GetStr();
+    /*Input();*/
 }
 
 MyString operator+(const MyString& a, char b) {
@@ -309,7 +311,7 @@ void MyString::setLength(int newLength) {
     length = newLength;
 }
 
-ostream& operator<<(ostream& os, const MyString& obj)
+ostream& operator<<(ostream &os, const MyString &obj)
 {
     os << obj.GetStr();
     return os;

@@ -1,4 +1,7 @@
 #pragma once 
+#include <iostream>
+using namespace std;
+
 //HW_10
 class MyString {
     char* str;
@@ -19,15 +22,15 @@ public:
     void setStr(const char*);
 
 
-    void Input();
-    void Output() const;
+    /*void Input();
+    void Output() const;*/
     void MyStrcpy(char*, const char*);
     bool MyStrStr(const char*);
     int MyChr(char);
     int MyStrLen(const char* s = nullptr) const;
-    void MyStrCat(MyString& b);
+    void MyStrCat(const MyString& b);
     void MyDelChr(char);
-    int MyStrCmp(MyString& b);
+    int MyStrCmp(const MyString& b);
 
     //HW_11
     MyString operator+(const MyString& b) const;
@@ -56,5 +59,5 @@ MyString operator+(const MyString& a, int num);
 MyString operator+(int num, const MyString& a);
 
 //HW_12
-ostream& operator << (ostream& os, const MyString& obj);
-istream& operator >> (istream& is, MyString& obj);
+ostream& operator<<(ostream &os, const MyString &obj);
+istream& operator>>(istream& is, MyString& obj);
