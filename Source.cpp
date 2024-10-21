@@ -345,7 +345,7 @@ MyString::MyString(MyString&& other)
     length = other.length;
     other.str = nullptr; 
     objCount++;
-    cout << "Move constractor" << endl;
+    cout << "Move constractor: ";
 }
 
 MyString MyString::operator=(MyString&& obj)
@@ -362,7 +362,7 @@ MyString MyString::operator=(MyString&& obj)
     obj.str = nullptr;  // Очищаем старый объект
     obj.length = 0;
 
-    cout << "Move assignment operator" << endl;
+    cout << "Move assignment operator: ";
     return *this;
 }
 

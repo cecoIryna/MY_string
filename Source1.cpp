@@ -98,15 +98,23 @@ int main() {
     MyString str11 = ++str6;
     cout << str11 << endl;
 
-    MyString str12;
+    /*MyString str12;
     MyString str13("Hello, world!");
 
     cout << "Enter a string for str12: ";
     cin >> str12;  
 
     cout << "str1: " << str12 << endl; 
-    cout << "str2: " << str13 << endl;
+    cout << "str2: " << str13 << endl;*/
 
+    //HW_13
+    cout << "Demonstration of initializer_list constructor: ";
+    MyString str12{ 'H', 'e', 'l', 'l', 'o' };
+    cout << str12 << endl;
+
+    MyString str13("World");
+    MyString str14 = move(str13);  // Move constructor
+    cout << str14;
 
     return 0;
 }

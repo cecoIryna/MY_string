@@ -50,6 +50,12 @@ public:
     int getLength() const;
     void setLength(int newLength);
 
+    //HW_13
+    MyString(initializer_list<char>);
+
+    MyString(MyString&& other);
+    MyString operator=(MyString&& obj);
+
 };
 
 MyString operator+(const MyString& a, char b);
