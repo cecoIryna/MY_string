@@ -324,3 +324,45 @@ istream& operator>>(istream& is, MyString& obj)
     obj.setStr(buffer);
     return is;
 }
+
+//HW_13
+MyString::MyString(initializer_list<char> initList)
+{
+    length = initList.size();
+    str = new char[length + 1];
+
+    auto it = initList.begin();
+    for (int i = 0; i < length; ++i, ++it) {
+        str[i] = *it; 
+    }
+    str[length] = '\0';
+    objCount++;
+}
+
+MyString::MyString(MyString&& other)
+{
+    str = other.str;
+    length = other.length;
+    other.str = nullptr; 
+    objCount++;
+    cout << "Move constractor" << endl;
+}
+
+MyString MyString::operator=(MyString&& obj)
+{
+    if (this == &obj)  
+    {
+        return *this;  
+    }
+    delete[] str;      
+
+    str = obj.str;
+    length = obj.length;
+
+    obj.str = nullptr;  // Очищаем старый объект
+    obj.length = 0;
+
+    cout << "Move assignment operator" << endl;
+    return *this;
+}
+
